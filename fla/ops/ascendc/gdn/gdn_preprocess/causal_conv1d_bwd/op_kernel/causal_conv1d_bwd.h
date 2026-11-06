@@ -48,7 +48,8 @@
 #define CAUSAL_CONV1D_BWD_ARCH32_VECTOR 0
 #endif
 
-#if defined(__CCE_AICORE__) && __CCE_AICORE__ == 310
+#if (defined(__CCE_AICORE__) && __CCE_AICORE__ == 310) || \
+    (defined(__NPU_ARCH__) && __NPU_ARCH__ == 9201)
 #include "arch35/causal_conv1d_bwd_regbase.h"
 #define CAUSAL_CONV1D_BWD_ARCH35_REGBASE 1
 #else
